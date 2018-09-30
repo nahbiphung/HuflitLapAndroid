@@ -30,7 +30,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 String email = edt1.getText().toString();
                 String pass = edt2.getText().toString();
-                String confirm = edt2.getText().toString();
+                String confirm = edt3.getText().toString();
 
                 if(pass.compareToIgnoreCase(confirm) == 0){
                     Intent intent = new Intent(Register.this,Login.class);
@@ -39,6 +39,11 @@ public class Register extends AppCompatActivity {
                     setResult(101,intent);
                     finish();
                     Toast.makeText(Register.this,"Registered !!!",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    edt2.setText("");
+                    edt3.setText("");
+                    Toast.makeText(Register.this,"Password not match !!!",Toast.LENGTH_SHORT).show();
                 }
             }
         });

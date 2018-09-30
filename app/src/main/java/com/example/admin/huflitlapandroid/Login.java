@@ -1,6 +1,7 @@
 package com.example.admin.huflitlapandroid;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,5 +39,14 @@ public class Login extends AppCompatActivity {
                 startActivityForResult(intent,100);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 100 && resultCode == 101){
+            edt1.setText(data.getStringExtra("name"));
+            edt2.setText(data.getStringExtra("pass"));
+        }
     }
 }
