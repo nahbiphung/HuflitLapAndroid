@@ -24,12 +24,12 @@ public class RecyclerActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.RecyclerView);
 
 //        hinh 6.1
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+//        mLayoutManager = new LinearLayoutManager(this);
+//        mRecyclerView.setLayoutManager(mLayoutManager);
 
 //        hinh 6.2
-//        mLayoutManager = new GridLayoutManager(this,2);
-//        mRecyclerView.setLayoutManager(mLayoutManager);
+        mLayoutManager = new GridLayoutManager(this,2);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
 //        hinh 6.3
 //        mLayoutManager = new LinearLayoutManager(RecyclerActivity.this,LinearLayoutManager.HORIZONTAL,false);
@@ -37,7 +37,7 @@ public class RecyclerActivity extends AppCompatActivity {
 
         songList = Songs.init();
 
-        songAdapter = new SongAdapter(RecyclerActivity.this,R.layout.layout_item,songList);
+        songAdapter = new SongAdapter(RecyclerActivity.this, R.layout.layout_items,songList);
 
         mRecyclerView.setAdapter(songAdapter);
     }
